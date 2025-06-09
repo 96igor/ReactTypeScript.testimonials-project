@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import './Testimonials.css';
 
 interface Testimonial {
   company: string;
@@ -39,24 +41,29 @@ const Testimonials: React.FC = () => {
     setCurrentIndex((prev) => (prev === testimonialsData.length - 1 ? 0 : prev + 1));
   };
 
-  const currentTestimonial = testimonialsData[currentIndex];
+  const current = testimonialsData[currentIndex];
 
   return (
-    <div style={{ maxWidth: 600, margin: 'auto', textAlign: 'center' }}>
-      <h1>Voices of Success with Sales Fortuna</h1>
+    <div className="testimonial-container">
+      <h1 className="testimonial-title">Voices of Success with Sales Fortuna</h1>
 
-      <div style={{ border: '1px solid #ccc', padding: 20, borderRadius: 10, position: 'relative' }}>
-        <h2>{currentTestimonial.company}</h2>
-        <p>{currentTestimonial.text}</p>
-        <p><strong>{currentTestimonial.author}</strong>, {currentTestimonial.position}</p>
+      <motion.div
+        className="testimonial-card"
+        key={currentIndex}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="quote-icon">“</div>
+        <h2 className="company">{current.company}</h2>
+        <p className="text">{current.text}</p>
+        <p className="author">
+          <strong>{current.author}</strong>, {current.position}
+        </p>
 
-        <button onClick={prevTestimonial} style={{ position: 'absolute', left: 10, top: '50%' }}>
-          &#8592;
-        </button>
-        <button onClick={nextTestimonial} style={{ position: 'absolute', right: 10, top: '50%' }}>
-          &#8594;
-        </button>
-      </div>
+        <button className="nav-button left" onClick={prevTestimonial}>❮</button>
+        <button className="nav-button right" onClick={nextTestimonial}>❯</button>
+      </motion.div>
     </div>
   );
 };

@@ -1,0 +1,71 @@
+.testimonial-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 0 1rem;
+}
+
+.testimonial-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.testimonial-card {
+  position: relative;
+  background: #fefefe;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.company {
+  color: #007acc;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  color: #444;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.author {
+  color: #666;
+  margin-top: 1rem;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #007acc;
+  transform: translateY(-50%);
+  transition: color 0.3s;
+}
+
+.nav-button:hover {
+  color: #005f99;
+}
+
+.nav-button.left {
+  left: -2rem;
+}
+
+.nav-button.right {
+  right: -2rem;
+}
+
+.quote-icon {
+  font-size: 3rem;
+  color: #ccc;
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+}
